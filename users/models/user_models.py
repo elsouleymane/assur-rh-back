@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from base.models.helpers.date_time_model import DateTimeModel
 
 
-class UserModels(DateTimeModel, AbstractUser):
+class UserModels(DateTimeModel):
     role = models.ForeignKey(RoleModels, on_delete=models.CASCADE, null=True, related_name='users')
     username = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=255)

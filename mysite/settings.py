@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
 ]
-AUTH_USER_MODEL = 'users.UserModels'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -95,8 +94,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'assurhr',
@@ -104,14 +103,6 @@ DATABASES = {
         # 'PASSWORD': '',
         # 'HOST': 'localhost',
         # 'PORT': '5432',
-
-
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'assurhr',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
     }
 }
 
