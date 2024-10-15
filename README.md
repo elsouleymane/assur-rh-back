@@ -1,4 +1,13 @@
-# Django
+# Projet Assur RH
 
-A Django starter template as per the docs: https://docs.djangoproject.com/en/5.0/intro/tutorial01/
+## Lead :
+ - Nuhu Souleymane
+
+ ## Equipe Front-end
+- Milo
+- Ella
+
+## Equipe Back-end
+- Dary
+- Irie
 
