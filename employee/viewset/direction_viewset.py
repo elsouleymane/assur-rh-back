@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 
 from employee.models.direction_models import DirectionModels
-from employee.serializers.employe_serializer import EmployeSerializer
+from employee.serializers.direction_serializer import DirectionSerializer
 
-
-def create_direction():
-    pass
+class DirectionViewSet(viewsets.ModelViewSet):
+    serializer_class = DirectionSerializer
+    queryset = DirectionModels.objects.all()

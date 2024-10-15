@@ -23,6 +23,10 @@ from rest_framework import routers
 from rest_framework.routers import DefaultRouter
 from tutorial.quickstart.serializers import UserSerializer
 
+from employee.serializers.employe_serializer import EmployeSerializer
+from employee.viewset.direction_viewset import DirectionViewSet
+from employee.viewset.employe_viewset import EmployeeViewSet
+from employee.viewset.leave_viewset import LeaveViewSet
 from users.viewset.menu_viewset import MenuViewSet
 from users.viewset.permission_viewset import PermissionViewSet
 from users.viewset.role_viewset import RoleViewSet
@@ -30,9 +34,12 @@ from users.viewset.user_viewset import UserViewSet
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'menu', MenuViewSet)
-router.register(r'role', RoleViewSet)
+router.register(r'menus', MenuViewSet)
+router.register(r'roles', RoleViewSet)
 router.register(r'permissions', PermissionViewSet)
+router.register(r'directions', DirectionViewSet)
+router.register(r'employees', EmployeeViewSet)
+router.register(r'leaves', LeaveViewSet)
 
 
 schema_view = get_schema_view(
