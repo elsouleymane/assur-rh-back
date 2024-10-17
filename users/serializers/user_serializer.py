@@ -2,7 +2,7 @@ from rest_framework import serializers
 from users.models.user_models import UserModels
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserModels
         fields = "__all__"

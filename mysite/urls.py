@@ -31,6 +31,11 @@ from users.viewset.menu_viewset import MenuViewSet
 from users.viewset.permission_viewset import PermissionViewSet
 from users.viewset.role_viewset import RoleViewSet
 from users.viewset.user_viewset import UserViewSet
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -60,6 +65,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #urls api
     path('api/v1/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     #documentations
     re_path(r'api/v1/swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
